@@ -56,7 +56,7 @@ export default function Home() {
     <main>
       <a
         className="floating-whatsapp"
-        href="https://wa.me/5548999999999?text=Ol%C3%A1%2C%20quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Monarch."
+        href="https://wa.me/5548991087702?text=Ol%C3%A1%2C%20quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Monarch."
         target="_blank"
         rel="noreferrer"
       >
@@ -85,7 +85,7 @@ export default function Home() {
           <div className="hero-actions">
             <a
               className="btn btn-gold"
-              href="https://wa.me/5548999999999?text=Ol%C3%A1%2C%20quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Monarch."
+              href="https://wa.me/5548991087702?text=Ol%C3%A1%2C%20quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Monarch."
               target="_blank"
               rel="noreferrer"
             >
@@ -195,7 +195,7 @@ export default function Home() {
           </p>
           <a
             className="btn btn-gold"
-            href="https://wa.me/5548999999999?text=Ol%C3%A1%2C%20quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Monarch."
+            href="https://wa.me/5548991087702?text=Ol%C3%A1%2C%20quero%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Monarch."
             target="_blank"
             rel="noreferrer"
           >
