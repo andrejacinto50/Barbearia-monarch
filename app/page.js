@@ -2,22 +2,22 @@ const services = [
   {
     title: 'Corte Premium',
     description:
-      'Acabamento preciso, estilo moderno e atenção aos detalhes para um visual de alto nível.'
+      'Precisão, estilo e acabamento refinado para quem quer transmitir presença com um visual mais forte e atual.'
   },
   {
     title: 'Barba Premium',
     description:
-      'Desenho, alinhamento e finalização impecável para valorizar sua presença.'
+      'Desenho estratégico, alinhamento impecável e finalização pensada para valorizar os traços com sofisticação.'
   },
   {
     title: 'Combo Premium',
     description:
-      'Corte + barba para quem busca praticidade sem abrir mão de sofisticação.'
+      'Corte e barba em uma experiência completa para quem busca praticidade sem abrir mão de um padrão elevado.'
   },
   {
     title: 'Pigmentação e Acabamento',
     description:
-      'Detalhes que reforçam o visual com naturalidade, definição e elegância.'
+      'Detalhes que reforçam definição, equilíbrio visual e elegância, elevando ainda mais o resultado final.'
   }
 ];
 
@@ -25,17 +25,38 @@ const benefits = [
   {
     title: 'Presença visual que valoriza o negócio',
     description:
-      'Um site premium transmite mais autoridade, reforça a imagem da barbearia e impressiona logo no primeiro contato.'
+      'Uma apresentação premium fortalece a imagem da barbearia, transmite autoridade e gera uma percepção muito mais profissional.'
   },
   {
     title: 'Mais confiança para novos clientes',
     description:
-      'Uma apresentação profissional aumenta a percepção de qualidade e faz o cliente se sentir mais seguro para agendar.'
+      'Quando a marca se apresenta com mais força, organização e acabamento, o cliente sente mais segurança para entrar em contato.'
   },
   {
     title: 'Agendamento direto pelo WhatsApp',
     description:
-      'Contato rápido, simples e direto para facilitar a conversão e reduzir qualquer barreira na hora de marcar.'
+      'Contato rápido, simples e objetivo para facilitar a conversão e transformar interesse em agendamento com menos barreiras.'
+  }
+];
+
+const experienceItems = [
+  {
+    number: '01',
+    title: 'Imagem forte desde o primeiro contato',
+    description:
+      'Uma barbearia premium precisa ser percebida como premium antes mesmo do atendimento começar.'
+  },
+  {
+    number: '02',
+    title: 'Ambiente, atendimento e acabamento',
+    description:
+      'Cada etapa da experiência precisa reforçar cuidado, presença e alto padrão visual.'
+  },
+  {
+    number: '03',
+    title: 'Agendamento simples e direto',
+    description:
+      'Estrutura pensada para facilitar o contato e acelerar a decisão do cliente.'
   }
 ];
 
@@ -110,13 +131,14 @@ export default function Home() {
 
         <div className="hero-content container">
           <div className="hero-copy">
-            <span className="badge">Experiência premium em barbearia</span>
+            <span className="badge">Barbearia premium para quem valoriza presença</span>
 
-            <h1>Seu visual merece uma experiência à altura.</h1>
+            <h1>Seu visual merece mais do que um corte. Merece presença.</h1>
 
             <p className="hero-lead">
-              Cortes modernos, barba impecável e atendimento de alto nível em um ambiente pensado
-              para quem valoriza estilo, presença e sofisticação.
+              A Barbearia Monarch foi pensada para entregar uma experiência de alto padrão, unindo
+              técnica, estilo, ambiente sofisticado e um atendimento que valoriza sua imagem em cada
+              detalhe.
             </p>
 
             <div className="hero-actions">
@@ -130,16 +152,16 @@ export default function Home() {
 
             <div className="hero-stats">
               <div className="hero-stat">
-                <strong>Visual premium</strong>
-                <span>Mais impacto para a marca</span>
+                <strong>Imagem premium</strong>
+                <span>Mais impacto para a marca e para a percepção do cliente</span>
               </div>
               <div className="hero-stat">
                 <strong>Mais confiança</strong>
-                <span>Apresentação profissional</span>
+                <span>Estrutura profissional que transmite cuidado e padrão elevado</span>
               </div>
               <div className="hero-stat">
-                <strong>Contato rápido</strong>
-                <span>Agendamento direto no WhatsApp</span>
+                <strong>Contato direto</strong>
+                <span>Agendamento rápido pelo WhatsApp para facilitar a conversão</span>
               </div>
             </div>
           </div>
@@ -148,22 +170,22 @@ export default function Home() {
             <span className="section-tag">Site profissional criado para barbearias</span>
             <h3>Feito para atrair mais clientes e facilitar o agendamento.</h3>
             <p>
-              Uma apresentação digital premium para valorizar a barbearia, transmitir confiança e
-              transformar visitas em contatos reais.
+              Uma apresentação digital premium que valoriza a marca, reforça o posicionamento da
+              barbearia e transforma interesse em contato real.
             </p>
 
             <div className="hero-card-list">
               <div>
                 <span>01</span>
-                <p>Presença visual forte para destacar o negócio</p>
+                <p>Presença visual forte para destacar o negócio logo no primeiro contato</p>
               </div>
               <div>
                 <span>02</span>
-                <p>Estrutura profissional que gera mais confiança</p>
+                <p>Mais confiança para novos clientes através de uma estrutura profissional</p>
               </div>
               <div>
                 <span>03</span>
-                <p>WhatsApp em destaque para converter mais rápido</p>
+                <p>WhatsApp em destaque para reduzir barreiras e gerar mais agendamentos</p>
               </div>
             </div>
           </div>
@@ -174,7 +196,10 @@ export default function Home() {
         <div className="container">
           <div className="section-heading center">
             <span className="section-tag">Destaque</span>
-            <h2>Site profissional criado para barbearias que querem atrair mais clientes e facilitar o agendamento.</h2>
+            <h2>
+              Site profissional criado para barbearias que querem atrair mais clientes e facilitar o
+              agendamento.
+            </h2>
           </div>
 
           <div className="grid benefits-grid">
@@ -193,36 +218,55 @@ export default function Home() {
         <div className="container two-columns">
           <div>
             <span className="section-tag">Sobre a Monarch</span>
-            <h2>Mais do que um corte. Uma experiência pensada para impressionar.</h2>
+            <h2>Mais do que atendimento. Uma experiência pensada para impressionar.</h2>
             <p>
-              Na Barbearia Monarch, cada detalhe foi pensado para entregar um atendimento
-              diferenciado. Unimos técnica, estilo e um ambiente sofisticado para valorizar a sua
-              imagem com confiança e personalidade.
+              Na Barbearia Monarch, cada detalhe foi pensado para entregar um padrão superior de
+              experiência. Unimos técnica, presença visual e um ambiente sofisticado para valorizar
+              a imagem de quem busca mais do que o básico.
             </p>
             <p>
-              Do primeiro contato ao acabamento final, a proposta é oferecer um padrão de qualidade
-              que o cliente percebe em cada etapa da experiência.
+              Do primeiro contato ao acabamento final, tudo foi construído para transmitir cuidado,
+              confiança e uma percepção clara de qualidade em cada visita.
             </p>
           </div>
 
           <div className="highlight-card">
-            <h3>O que você encontra aqui</h3>
+            <h3>O que define a experiência Monarch</h3>
             <ul>
               <li>Atendimento com horário agendado</li>
               <li>Ambiente elegante e confortável</li>
               <li>Equipe focada em excelência</li>
-              <li>Visual alinhado com seu estilo</li>
-              <li>Experiência premium do começo ao fim</li>
+              <li>Visual alinhado com seu estilo e presença</li>
+              <li>Experiência premium do início ao fim</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section className="section alt" id="servicos">
+      <section className="section alt">
+        <div className="container">
+          <div className="section-heading">
+            <span className="section-tag">Padrão Monarch</span>
+            <h2>Um padrão pensado para fortalecer imagem, confiança e percepção de valor.</h2>
+          </div>
+
+          <div className="grid cards-grid">
+            {experienceItems.map((item) => (
+              <article className="card" key={item.number}>
+                <div className="card-number">{item.number}</div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="servicos">
         <div className="container">
           <div className="section-heading">
             <span className="section-tag">Serviços</span>
-            <h2>Serviços premium para quem exige presença.</h2>
+            <h2>Serviços premium para quem exige presença, estilo e acabamento.</h2>
           </div>
 
           <div className="grid cards-grid">
@@ -237,7 +281,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section alt">
         <div className="container">
           <div className="section-heading">
             <span className="section-tag">Diferenciais</span>
@@ -255,11 +299,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section alt" id="galeria">
+      <section className="section" id="galeria">
         <div className="container">
           <div className="section-heading">
             <span className="section-tag">Galeria</span>
             <h2>Um ambiente que combina estilo, conforto e sofisticação.</h2>
+            <p>
+              Um espaço pensado para reforçar a experiência, transmitir qualidade e valorizar cada
+              detalhe da marca.
+            </p>
           </div>
 
           <div className="gallery-grid">
@@ -272,7 +320,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section alt">
         <div className="container">
           <div className="section-heading">
             <span className="section-tag">Depoimentos</span>
@@ -293,10 +341,10 @@ export default function Home() {
       <section className="section cta-section" id="contato">
         <div className="container cta-box">
           <span className="section-tag">Agendamento</span>
-          <h2>Agende seu horário e viva a experiência Monarch.</h2>
+          <h2>Agende seu horário e viva o padrão Monarch.</h2>
           <p>
-            Eleve seu visual com um atendimento premium. Fale agora pelo WhatsApp e reserve seu
-            horário sem complicação.
+            Eleve seu visual com um atendimento premium, ambiente sofisticado e acabamento de alto
+            nível. Fale agora pelo WhatsApp e reserve seu horário com facilidade.
           </p>
 
           <div className="cta-actions">
@@ -311,36 +359,36 @@ export default function Home() {
       </section>
 
       <nav className="mobile-bottom-nav">
-  <a href="#topo" className="mobile-nav-item">
-    <span className="mobile-nav-icon">⌂</span>
-    <span className="mobile-nav-label">Início</span>
-  </a>
+        <a href="#topo" className="mobile-nav-item">
+          <span className="mobile-nav-icon">⌂</span>
+          <span className="mobile-nav-label">Início</span>
+        </a>
 
-  <a href="#sobre" className="mobile-nav-item">
-    <span className="mobile-nav-icon">◦</span>
-    <span className="mobile-nav-label">Sobre</span>
-  </a>
+        <a href="#sobre" className="mobile-nav-item">
+          <span className="mobile-nav-icon">◦</span>
+          <span className="mobile-nav-label">Sobre</span>
+        </a>
 
-  <a
-    href={whatsappLink}
-    target="_blank"
-    rel="noreferrer"
-    className="mobile-nav-item mobile-nav-whatsapp"
-  >
-    <span className="mobile-nav-icon">✆</span>
-    <span className="mobile-nav-label">WhatsApp</span>
-  </a>
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noreferrer"
+          className="mobile-nav-item mobile-nav-whatsapp"
+        >
+          <span className="mobile-nav-icon">✆</span>
+          <span className="mobile-nav-label">WhatsApp</span>
+        </a>
 
-  <a href="#servicos" className="mobile-nav-item">
-    <span className="mobile-nav-icon">□</span>
-    <span className="mobile-nav-label">Serviços</span>
-  </a>
+        <a href="#servicos" className="mobile-nav-item">
+          <span className="mobile-nav-icon">□</span>
+          <span className="mobile-nav-label">Serviços</span>
+        </a>
 
-  <a href="#galeria" className="mobile-nav-item">
-    <span className="mobile-nav-icon">◇</span>
-    <span className="mobile-nav-label">Galeria</span>
-  </a>
-</nav>
+        <a href="#galeria" className="mobile-nav-item">
+          <span className="mobile-nav-icon">◇</span>
+          <span className="mobile-nav-label">Galeria</span>
+        </a>
+      </nav>
 
       <footer className="footer">
         <div className="container footer-content">

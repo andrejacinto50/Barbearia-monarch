@@ -1,21 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #090909;
+  --bg: #080808;
+  --bg-deep: #050505;
   --surface: rgba(255, 255, 255, 0.03);
   --surface-2: rgba(255, 255, 255, 0.05);
+  --surface-3: rgba(255, 255, 255, 0.08);
   --gold: #c8a96b;
+  --gold-strong: #ddb875;
   --gold-soft: #e7d4ad;
   --text: #f5f2ec;
   --muted: #c9c2b8;
   --white-soft: rgba(255, 255, 255, 0.72);
   --border: rgba(200, 169, 107, 0.18);
   --border-soft: rgba(255, 255, 255, 0.08);
-  --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.2);
-  --radius-xl: 30px;
-  --radius-lg: 24px;
-  --radius-md: 18px;
+  --shadow: 0 22px 70px rgba(0, 0, 0, 0.42);
+  --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.24);
+  --shadow-gold: 0 0 40px rgba(200, 169, 107, 0.12);
+  --radius-xl: 32px;
+  --radius-lg: 26px;
+  --radius-md: 20px;
   --radius-sm: 14px;
 }
 
@@ -30,8 +34,9 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top, rgba(200, 169, 107, 0.08), transparent 18%),
-    linear-gradient(180deg, #0a0a0a 0%, #090909 100%);
+    radial-gradient(circle at top, rgba(200, 169, 107, 0.1), transparent 16%),
+    radial-gradient(circle at 80% 20%, rgba(200, 169, 107, 0.06), transparent 20%),
+    linear-gradient(180deg, #0b0b0b 0%, var(--bg) 42%, var(--bg-deep) 100%);
   color: var(--text);
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
@@ -62,13 +67,14 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 40;
-  backdrop-filter: blur(16px);
-  background: rgba(8, 8, 8, 0.72);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: rgba(8, 8, 8, 0.68);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .navbar-inner {
-  min-height: 82px;
+  min-height: 84px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -92,17 +98,17 @@ textarea {
   display: block;
   color: var(--muted);
   font-size: 0.74rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-top: 4px;
 }
 
 .brand-mark {
   width: 14px;
-  height: 38px;
+  height: 40px;
   border-radius: 999px;
-  background: linear-gradient(180deg, var(--gold) 0%, #8e6d37 100%);
-  box-shadow: 0 0 30px rgba(200, 169, 107, 0.28);
+  background: linear-gradient(180deg, var(--gold-strong) 0%, #8e6d37 100%);
+  box-shadow: 0 0 30px rgba(200, 169, 107, 0.26);
 }
 
 .navbar nav {
@@ -151,6 +157,7 @@ textarea {
   color: var(--gold-soft);
   font-weight: 600;
   white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .hero {
@@ -160,55 +167,64 @@ textarea {
   align-items: center;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(9, 9, 9, 0.88) 0%, rgba(9, 9, 9, 0.72) 42%, rgba(9, 9, 9, 0.56) 100%),
+    linear-gradient(90deg, rgba(7, 7, 7, 0.96) 0%, rgba(7, 7, 7, 0.8) 36%, rgba(7, 7, 7, 0.52) 100%),
     url('https://images.unsplash.com/photo-1512690459411-b0fd1c86b8d8?auto=format&fit=crop&w=1800&q=80')
       center/cover no-repeat;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 180px;
+  background: linear-gradient(180deg, transparent, rgba(5, 5, 5, 0.92));
+  pointer-events: none;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.48) 100%);
+    linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.56) 100%);
 }
 
 .hero-glow {
   position: absolute;
   border-radius: 999px;
-  filter: blur(80px);
+  filter: blur(90px);
   opacity: 0.22;
   pointer-events: none;
 }
 
 .hero-glow-1 {
-  width: 260px;
-  height: 260px;
+  width: 300px;
+  height: 300px;
   background: var(--gold);
-  top: 12%;
-  right: 12%;
+  top: 10%;
+  right: 10%;
 }
 
 .hero-glow-2 {
-  width: 220px;
-  height: 220px;
+  width: 260px;
+  height: 260px;
   background: #ffffff;
-  bottom: 10%;
-  right: 24%;
-  opacity: 0.08;
+  bottom: 8%;
+  right: 22%;
+  opacity: 0.06;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  padding: 82px 0 72px;
+  padding: 88px 0 84px;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 420px);
-  gap: 28px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 430px);
+  gap: 30px;
   align-items: end;
 }
 
 .hero-copy {
-  max-width: 760px;
+  max-width: 780px;
 }
 
 .badge,
@@ -221,32 +237,37 @@ textarea {
   border: 1px solid var(--border);
   background: rgba(200, 169, 107, 0.08);
   color: var(--gold-soft);
-  font-size: 0.82rem;
-  letter-spacing: 0.06em;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
   margin-bottom: 18px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .hero h1,
 .section h2,
 .cta-box h2,
-.hero-card h3 {
+.hero-card h3,
+.highlight-card h3,
+.card h3,
+.benefit-card h3 {
   font-family: 'Playfair Display', serif;
   letter-spacing: 0.02em;
 }
 
 .hero h1 {
-  font-size: clamp(2.8rem, 7vw, 5.8rem);
-  line-height: 0.98;
+  font-size: clamp(3rem, 7vw, 6.2rem);
+  line-height: 0.96;
   margin: 0 0 18px;
-  max-width: 760px;
+  max-width: 820px;
+  text-wrap: balance;
 }
 
 .hero-lead {
-  max-width: 680px;
+  max-width: 690px;
   font-size: 1.08rem;
-  line-height: 1.85;
-  color: #ede6db;
-  margin: 0 0 30px;
+  line-height: 1.88;
+  color: #efe8dd;
+  margin: 0 0 32px;
 }
 
 .hero-actions,
@@ -269,13 +290,16 @@ textarea {
 }
 
 .btn-gold {
-  background: linear-gradient(180deg, #ddc08a 0%, var(--gold) 100%);
+  background: linear-gradient(180deg, #e5c58a 0%, var(--gold) 100%);
   color: #0c0c0c;
 }
 
 .btn-gold:hover {
   transform: translateY(-2px);
   filter: brightness(1.04);
+  box-shadow:
+    0 14px 30px rgba(200, 169, 107, 0.22),
+    0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .btn-outline {
@@ -286,10 +310,11 @@ textarea {
 
 .btn-outline:hover {
   background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
 }
 
 .hero-stats {
-  margin-top: 34px;
+  margin-top: 36px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
@@ -297,10 +322,11 @@ textarea {
 
 .hero-stat {
   padding: 18px;
-  border-radius: 20px;
+  border-radius: 22px;
   border: 1px solid var(--border-soft);
   background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .hero-stat strong {
@@ -314,35 +340,57 @@ textarea {
   display: block;
   color: var(--muted);
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .hero-card,
 .highlight-card,
 .card,
 .benefit-card,
-.testimonial-card {
+.testimonial-card,
+.cta-box {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018));
   box-shadow: var(--shadow);
 }
 
 .hero-card {
-  padding: 28px;
+  padding: 30px;
   backdrop-filter: blur(14px);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::before,
+.highlight-card::before,
+.card::before,
+.benefit-card::before,
+.testimonial-card::before,
+.cta-box::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0)
+  );
+  pointer-events: none;
 }
 
 .hero-card h3 {
   margin: 0 0 14px;
-  font-size: 1.8rem;
-  line-height: 1.1;
+  font-size: 1.95rem;
+  line-height: 1.08;
 }
 
 .hero-card p {
   color: var(--muted);
-  line-height: 1.75;
+  line-height: 1.8;
   margin: 0 0 24px;
 }
 
@@ -372,27 +420,30 @@ textarea {
   background: rgba(200, 169, 107, 0.12);
   color: var(--gold);
   font-weight: 700;
+  box-shadow: var(--shadow-gold);
 }
 
 .hero-card-list p {
   margin: 0;
   color: var(--text);
-  line-height: 1.55;
+  line-height: 1.58;
   font-size: 0.95rem;
 }
 
 .section {
-  padding: 96px 0;
+  position: relative;
+  padding: 100px 0;
 }
 
 .section.alt {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.03));
+    radial-gradient(circle at top, rgba(200, 169, 107, 0.04), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.012), rgba(255, 255, 255, 0.028));
 }
 
 .section-heading {
-  max-width: 760px;
-  margin-bottom: 28px;
+  max-width: 780px;
+  margin-bottom: 32px;
 }
 
 .section-heading.center {
@@ -403,18 +454,19 @@ textarea {
 
 .section h2,
 .cta-box h2 {
-  font-size: clamp(2rem, 4.8vw, 3.4rem);
+  font-size: clamp(2.1rem, 4.8vw, 3.6rem);
   margin: 0;
-  line-height: 1.12;
+  line-height: 1.1;
+  text-wrap: balance;
 }
 
 .section p {
   color: var(--muted);
-  line-height: 1.85;
+  line-height: 1.88;
 }
 
 .benefits-section {
-  padding-top: 72px;
+  padding-top: 78px;
 }
 
 .grid {
@@ -424,27 +476,31 @@ textarea {
 
 .benefits-grid {
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 34px;
+  margin-top: 36px;
 }
 
 .benefit-card {
-  padding: 28px;
+  position: relative;
+  padding: 30px;
+  overflow: hidden;
 }
 
 .benefit-icon {
-  width: 52px;
-  height: 52px;
+  width: 54px;
+  height: 54px;
   border-radius: 16px;
   margin-bottom: 18px;
   background:
     linear-gradient(180deg, rgba(200, 169, 107, 0.22), rgba(200, 169, 107, 0.08));
   border: 1px solid rgba(200, 169, 107, 0.2);
+  box-shadow: var(--shadow-gold);
 }
 
 .benefit-card h3 {
   margin: 0 0 12px;
-  font-size: 1.14rem;
+  font-size: 1.2rem;
   color: var(--text);
+  line-height: 1.18;
 }
 
 .benefit-card p {
@@ -454,18 +510,20 @@ textarea {
 .two-columns {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
-  gap: 28px;
+  gap: 30px;
   align-items: stretch;
 }
 
 .highlight-card {
-  padding: 30px;
+  position: relative;
+  padding: 32px;
+  overflow: hidden;
 }
 
 .highlight-card h3 {
   margin: 0 0 18px;
   color: var(--gold);
-  font-size: 1.3rem;
+  font-size: 1.45rem;
 }
 
 .highlight-card ul {
@@ -481,22 +539,25 @@ textarea {
 }
 
 .card {
-  padding: 28px;
-  min-height: 230px;
+  position: relative;
+  padding: 30px 28px;
+  min-height: 245px;
+  overflow: hidden;
 }
 
 .card-number {
-  color: rgba(200, 169, 107, 0.45);
+  color: rgba(200, 169, 107, 0.46);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   margin-bottom: 16px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
 }
 
 .card h3 {
   margin: 0 0 12px;
   color: var(--gold);
-  font-size: 1.18rem;
+  font-size: 1.24rem;
+  line-height: 1.12;
 }
 
 .differentials-grid {
@@ -512,6 +573,7 @@ textarea {
   border-radius: 20px;
   border: 1px solid var(--border-soft);
   background: rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .differential-item p {
@@ -529,31 +591,34 @@ textarea {
   justify-content: center;
   font-weight: 700;
   flex: 0 0 auto;
+  box-shadow: var(--shadow-gold);
 }
 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
-  margin-top: 28px;
+  margin-top: 30px;
 }
 
 .gallery-item {
-  min-height: 320px;
+  min-height: 340px;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 26px;
   border: 1px solid var(--border-soft);
   background: #111;
+  box-shadow: var(--shadow-soft);
 }
 
 .gallery-item img {
   height: 100%;
   object-fit: cover;
-  transition: transform 0.45s ease;
+  transition: transform 0.5s ease, filter 0.5s ease;
 }
 
 .gallery-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.06);
+  filter: saturate(1.02);
 }
 
 .testimonials-grid {
@@ -562,12 +627,15 @@ textarea {
 }
 
 .testimonial-card {
-  padding: 28px;
+  position: relative;
+  padding: 30px 28px;
+  overflow: hidden;
 }
 
 .testimonial-card p {
   margin: 0 0 18px;
   font-size: 1rem;
+  line-height: 1.8;
 }
 
 .testimonial-card strong {
@@ -575,23 +643,24 @@ textarea {
 }
 
 .cta-section {
-  padding-top: 10px;
+  padding-top: 14px;
 }
 
 .cta-box {
+  position: relative;
   text-align: center;
-  padding: 50px 28px;
+  padding: 56px 30px;
   border-radius: var(--radius-xl);
-  border: 1px solid var(--border);
   background:
     radial-gradient(circle at top, rgba(200, 169, 107, 0.2), transparent 35%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.024));
   box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
 .cta-box p {
-  max-width: 760px;
-  margin: 16px auto 26px;
+  max-width: 780px;
+  margin: 16px auto 28px;
 }
 
 .cta-actions {
@@ -599,7 +668,7 @@ textarea {
 }
 
 .footer {
-  padding: 36px 0 54px;
+  padding: 38px 0 56px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
@@ -624,16 +693,18 @@ textarea {
   right: 18px;
   bottom: 18px;
   z-index: 60;
-  min-height: 56px;
-  padding: 0 20px;
+  min-height: 58px;
+  padding: 0 22px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #32df74 0%, #25d366 100%);
+  background: linear-gradient(180deg, #38df78 0%, #25d366 100%);
   color: #07120b;
   font-weight: 800;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 18px 40px rgba(37, 211, 102, 0.24);
+  box-shadow:
+    0 18px 40px rgba(37, 211, 102, 0.24),
+    0 8px 24px rgba(0, 0, 0, 0.24);
 }
 
 .mobile-bottom-nav {
@@ -682,6 +753,7 @@ textarea {
   .hero {
     min-height: auto;
     padding-top: 8px;
+    background-position: 62% center;
   }
 
   .hero-content,
@@ -696,8 +768,8 @@ textarea {
   }
 
   .hero-content {
-    padding: 64px 0 56px;
-    gap: 20px;
+    padding: 68px 0 58px;
+    gap: 22px;
   }
 
   .hero h1 {
@@ -709,11 +781,11 @@ textarea {
   }
 
   .section {
-    padding: 76px 0;
+    padding: 78px 0;
   }
 
   .gallery-item {
-    min-height: 260px;
+    min-height: 280px;
   }
 
   .footer-content {
@@ -780,7 +852,7 @@ textarea {
   .mobile-nav-whatsapp {
     position: relative;
     transform: translateY(-18px);
-    min-height: 78px;
+    min-height: 80px;
     border-radius: 22px;
     background: linear-gradient(180deg, #38e27a 0%, #25d366 100%);
     color: #07120b;
@@ -804,7 +876,7 @@ textarea {
   }
 
   .footer {
-    padding-bottom: 120px;
+    padding-bottom: 122px;
   }
 }
 
@@ -825,12 +897,8 @@ textarea {
     font-size: 0.68rem;
   }
 
-  .hero {
-    background-position: 62% center;
-  }
-
   .hero-content {
-    padding: 46px 0 42px;
+    padding: 48px 0 42px;
   }
 
   .badge,
@@ -842,14 +910,14 @@ textarea {
   }
 
   .hero h1 {
-    font-size: clamp(2.2rem, 11vw, 3.4rem);
+    font-size: clamp(2.3rem, 11vw, 3.5rem);
     line-height: 1.02;
     margin-bottom: 14px;
   }
 
   .hero-lead {
     font-size: 0.98rem;
-    line-height: 1.75;
+    line-height: 1.78;
     margin-bottom: 22px;
   }
 
@@ -883,7 +951,7 @@ textarea {
   .card,
   .benefit-card,
   .testimonial-card {
-    padding: 20px;
+    padding: 22px 20px;
   }
 
   .hero-card {
@@ -891,7 +959,7 @@ textarea {
   }
 
   .hero-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.56rem;
   }
 
   .hero-card-list div {
@@ -908,13 +976,13 @@ textarea {
   }
 
   .section {
-    padding: 62px 0;
+    padding: 64px 0;
   }
 
   .section h2,
   .cta-box h2 {
-    font-size: clamp(1.75rem, 8vw, 2.5rem);
-    line-height: 1.15;
+    font-size: clamp(1.82rem, 8vw, 2.6rem);
+    line-height: 1.14;
   }
 
   .section-heading {
@@ -926,7 +994,7 @@ textarea {
   }
 
   .gallery-item {
-    min-height: 220px;
+    min-height: 230px;
   }
 
   .differential-item {
@@ -935,7 +1003,7 @@ textarea {
   }
 
   .cta-box {
-    padding: 34px 18px;
+    padding: 36px 18px;
   }
 
   .mobile-bottom-nav {
