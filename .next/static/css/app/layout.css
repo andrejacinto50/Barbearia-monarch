@@ -1685,3 +1685,304 @@ body {
     font-size: 0.58rem;
   }
 }
+
+/* =========================
+   BARBEARIA HERO PREMIUM MOTION
+========================= */
+
+.hero-card,
+.hero-panel,
+.hero-info,
+.hero-showcase,
+.hero-right,
+.premium-card {
+  animation:
+    barberCardFloat 4.5s ease-in-out infinite,
+    barberCardGlow 3.8s ease-in-out infinite !important;
+  transform-origin: center;
+}
+
+.hero-card::after,
+.hero-panel::after,
+.hero-info::after,
+.hero-showcase::after,
+.hero-right::after,
+.premium-card::after {
+  content: "";
+  position: absolute;
+  top: -80%;
+  left: -45%;
+  width: 42%;
+  height: 240%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.16),
+    rgba(212,175,55,.18),
+    transparent
+  );
+  transform: rotate(18deg);
+  pointer-events: none;
+  animation: barberCardShine 3.8s ease-in-out infinite;
+}
+
+.hero-card li,
+.hero-panel li,
+.hero-info li,
+.hero-showcase li,
+.hero-right li,
+.premium-card li,
+.hero-card .feature,
+.hero-panel .feature,
+.hero-info .feature,
+.hero-showcase .feature,
+.hero-right .feature,
+.premium-card .feature {
+  animation: barberItemMove 2.8s ease-in-out infinite;
+}
+
+.hero-card li:nth-child(2),
+.hero-panel li:nth-child(2),
+.hero-info li:nth-child(2),
+.hero-showcase li:nth-child(2),
+.hero-right li:nth-child(2),
+.premium-card li:nth-child(2) {
+  animation-delay: .35s;
+}
+
+.hero-card li:nth-child(3),
+.hero-panel li:nth-child(3),
+.hero-info li:nth-child(3),
+.hero-showcase li:nth-child(3),
+.hero-right li:nth-child(3),
+.premium-card li:nth-child(3) {
+  animation-delay: .7s;
+}
+
+.hero-card h2,
+.hero-card h3,
+.hero-panel h2,
+.hero-panel h3,
+.hero-info h2,
+.hero-info h3,
+.hero-showcase h2,
+.hero-showcase h3,
+.hero-right h2,
+.hero-right h3,
+.premium-card h2,
+.premium-card h3 {
+  animation: barberTextGlow 3s ease-in-out infinite;
+}
+
+/* Cards pequenos da esquerda */
+.hero-stats > *,
+.hero-benefits > *,
+.hero-features > *,
+.hero-mini-card,
+.benefit-card {
+  animation: barberMiniFloat 3s ease-in-out infinite;
+}
+
+.hero-stats > *:nth-child(2),
+.hero-benefits > *:nth-child(2),
+.hero-features > *:nth-child(2),
+.benefit-card:nth-child(2) {
+  animation-delay: .3s;
+}
+
+.hero-stats > *:nth-child(3),
+.hero-benefits > *:nth-child(3),
+.hero-features > *:nth-child(3),
+.benefit-card:nth-child(3) {
+  animation-delay: .6s;
+}
+
+/* Botões mais vivos */
+.btn,
+.hero-btn,
+.whatsapp-btn,
+.cta-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after,
+.hero-btn::after,
+.whatsapp-btn::after,
+.cta-btn::after {
+  content: "";
+  position: absolute;
+  top: -80%;
+  left: -90%;
+  width: 45%;
+  height: 240%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.32),
+    transparent
+  );
+  transform: rotate(18deg);
+  pointer-events: none;
+  transition: .7s ease;
+}
+
+.btn:hover::after,
+.hero-btn:hover::after,
+.whatsapp-btn:hover::after,
+.cta-btn:hover::after {
+  left: 140%;
+}
+
+/* Fundo com movimento premium */
+.hero::before,
+.hero-section::before,
+.home-hero::before {
+  animation: barberBgMove 9s ease-in-out infinite;
+}
+
+/* Partículas discretas no lado direito */
+.hero-card::before,
+.hero-panel::before,
+.hero-info::before,
+.hero-showcase::before,
+.hero-right::before,
+.premium-card::before {
+  content: "";
+  position: absolute;
+  right: 12%;
+  top: 14%;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #e6c46d;
+  box-shadow: 0 0 26px rgba(230,196,109,.8);
+  opacity: 0;
+  pointer-events: none;
+  animation: barberParticle 3.5s ease-in-out infinite;
+}
+
+@keyframes barberCardFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: translateY(-16px) rotate(.7deg) scale(1.018);
+  }
+}
+
+@keyframes barberCardGlow {
+  0%, 100% {
+    box-shadow:
+      0 24px 70px rgba(0,0,0,.38),
+      0 0 0 rgba(212,175,55,0);
+  }
+
+  50% {
+    box-shadow:
+      0 36px 95px rgba(0,0,0,.55),
+      0 0 60px rgba(212,175,55,.18);
+  }
+}
+
+@keyframes barberCardShine {
+  0% {
+    transform: translateX(-170%) rotate(18deg);
+    opacity: 0;
+  }
+
+  28% {
+    opacity: 1;
+  }
+
+  55%, 100% {
+    transform: translateX(390%) rotate(18deg);
+    opacity: 0;
+  }
+}
+
+@keyframes barberItemMove {
+  0%, 100% {
+    transform: translateX(0);
+    border-color: rgba(255,255,255,.08);
+  }
+
+  50% {
+    transform: translateX(8px);
+    border-color: rgba(212,175,55,.22);
+  }
+}
+
+@keyframes barberTextGlow {
+  0%, 100% {
+    text-shadow: 0 0 0 rgba(212,175,55,0);
+  }
+
+  50% {
+    text-shadow:
+      0 0 22px rgba(212,175,55,.18),
+      0 0 42px rgba(212,175,55,.08);
+  }
+}
+
+@keyframes barberMiniFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes barberBgMove {
+  0%, 100% {
+    opacity: .7;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08) translateY(-10px);
+  }
+}
+
+@keyframes barberParticle {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(.4);
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-42px) scale(1.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-card,
+  .hero-panel,
+  .hero-info,
+  .hero-showcase,
+  .hero-right,
+  .premium-card {
+    animation:
+      barberCardMobileFloat 4s ease-in-out infinite,
+      barberCardGlow 3.8s ease-in-out infinite !important;
+  }
+
+  @keyframes barberCardMobileFloat {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+
+    50% {
+      transform: translateY(-10px) scale(1.01);
+    }
+  }
+}
